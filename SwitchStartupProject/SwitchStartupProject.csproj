@@ -70,7 +70,7 @@
     <Compile Include="SwitchStartupProjectPackage.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Configuration\ConfigurationSchema.json" />
+    <EmbeddedResource Include="Configuration\ConfigurationSchema.json" />
     <None Include="Key.snk" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
@@ -95,10 +95,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-	  <VSCTCompile Include="SwitchStartupProject.vsct">
-		  <ResourceName>Menus.ctmenu</ResourceName>
-		  <SubType>Designer</SubType>
-	  </VSCTCompile>
+    <VSCTCompile Include="SwitchStartupProject.vsct">
+      <ResourceName>Menus.ctmenu</ResourceName>
+      <SubType>Designer</SubType>
+    </VSCTCompile>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -115,17 +115,57 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="envdte">
+      <Version>17.9.37000</Version>
+    </PackageReference>
+    <PackageReference Include="envdte80">
+      <Version>17.9.37000</Version>
+    </PackageReference>
+    <PackageReference Include="envdte90">
+      <Version>17.9.37000</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.CommandBars">
+      <Version>17.9.37000</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.SDK" Version="17.0.32112.339" ExcludeAssets="runtime" />
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="17.8.2368" />
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="stdole">
+      <Version>17.9.37000</Version>
+    </PackageReference>
+    <PackageReference Include="VSLangProj">
+      <Version>17.9.37000</Version>
+    </PackageReference>
+    <PackageReference Include="VSLangProj100">
+      <Version>17.9.37000</Version>
+    </PackageReference>
+    <PackageReference Include="VSLangProj110">
+      <Version>17.9.37000</Version>
+    </PackageReference>
+    <PackageReference Include="VSLangProj140">
+      <Version>17.9.37000</Version>
+    </PackageReference>
+    <PackageReference Include="VSLangProj150">
+      <Version>17.9.37000</Version>
+    </PackageReference>
+    <PackageReference Include="VSLangProj80">
+      <Version>17.9.37000</Version>
+    </PackageReference>
+    <PackageReference Include="VSLangProj90">
+      <Version>17.9.37000</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="SignedAssemblies\NJsonSchema.dll" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="VSPackage.resx" />
+    <EmbeddedResource Include="VSPackage.resx">
+      <MergeWithCTO>true</MergeWithCTO>
+      <ManifestResourceName>VSPackage</ManifestResourceName>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
