@@ -415,7 +415,6 @@ namespace LucidConcepts.SwitchStartupProject
                     var properties = configuration.Properties;
                     if (properties == null) return null;
 
-
                     foreach (var property in properties.Cast<Property>())
                     {
                         if (property == null) continue;

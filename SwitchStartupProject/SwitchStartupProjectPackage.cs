@@ -29,7 +29,7 @@ namespace SwitchStartupProject
     /// </remarks>
     /// 
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
-    [ProvideAutoLoad(VSConstants.UICONTEXT.SolutionExistsAndFullyLoaded_string, PackageAutoLoadFlags.BackgroundLoad)]
+    //[ProvideAutoLoad(VSConstants.UICONTEXT.SolutionExistsAndFullyLoaded_string)]//, PackageAutoLoadFlags.BackgroundLoad)]
     [Guid(SwitchStartupProjectPackage.PackageGuidString)]
     public sealed class SwitchStartupProjectPackage : AsyncPackage
     {
